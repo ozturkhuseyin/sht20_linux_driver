@@ -195,6 +195,7 @@ static long sht20_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
         // get data and if needed get its average
         if (SHT20_MODE_PERIODIC == my_data->read_mode)
         {
+            // TODO: should i return average or sum of all reads and read count ??
             my_data->temperature = my_data->temperature / my_data->temp_read_count;
         }
         else
@@ -226,6 +227,7 @@ static long sht20_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
         // get data and if needed get its average
         if (SHT20_MODE_PERIODIC == my_data->read_mode)
         {
+            // TODO: should i return average or sum of all reads and read count ??
             my_data->hum = my_data->hum / my_data->hum_read_count;
         }
         else
